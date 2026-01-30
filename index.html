@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maîtres d’Excellence — Jordan Arriubergé, Meilleur Ouvrier de France</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --steel-gray: #475569;
+            --mof-blue: #002395;
+            --mof-red: #ed2939;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bbr-line {
+            height: 3px;
+            width: 60px;
+            background: linear-gradient(to right, var(--mof-blue) 33.33%, #ffffff 33.33%, #ffffff 66.66%, var(--mof-red) 66.66%);
+        }
+
+        .section-padding {
+            padding: 100px 20px;
+        }
+
+        .premium-border {
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .premium-border:hover {
+            border-color: var(--mof-blue);
+        }
+
+        .bg-steel {
+            background-color: #f8fafc;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="font-bold tracking-tighter text-xl uppercase">Maîtres d’Excellence</div>
+            <div class="hidden md:flex space-x-8 text-xs font-semibold uppercase tracking-widest text-slate-500">
+                <a href="#concept" class="hover:text-slate-900 transition">Concept</a>
+                <a href="#maitre" class="hover:text-slate-900 transition">Le Maître</a>
+                <a href="#offres" class="hover:text-slate-900 transition">Offres</a>
+                <a href="#partenariats" class="hover:text-slate-900 transition">Partenariats</a>
+                <a href="#contact" class="hover:text-slate-900 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center pt-20 px-6">
+        <div class="bbr-line mb-8"></div>
+        <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-tight">MAÎTRES D’EXCELLENCE</h1>
+        <p class="text-xl md:text-2xl text-slate-500 font-light mb-10 italic uppercase tracking-widest">
+            L’excellence industrielle française incarnée
+        </p>
+        <div class="max-w-2xl text-slate-400 text-sm uppercase tracking-widest mb-12">
+            Œuvres techniques d’exception · Expertise de Meilleur Ouvrier de France · Partenariats industriels premium
+        </div>
+        <a href="#offres" class="border border-slate-900 px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-slate-900 hover:text-white transition-all duration-500">
+            Devenir partenaire
+        </a>
+        <div class="mt-20 w-full max-w-6xl h-[50vh] bg-slate-100 overflow-hidden shadow-2xl">
+            <!-- Chemin local pour l'œuvre MOF -->
+            <img src="C:/Users/arriu/OneDrive/Documents/Maîtres d'Excellence/images/oeuvre-mof.jpg" alt="Usinage de précision" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- 2. CONCEPT -->
+    <section id="concept" class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl mb-12">Une initiative dédiée au très haut niveau industriel</h2>
+            <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>
+                    Maîtres d’Excellence est une démarche unique visant à valoriser le savoir-faire industriel français de très haut niveau, à travers des œuvres techniques d’exception et une expertise incarnée.
+                </p>
+                <p>
+                    Portée par Jordan Arriubergé, Meilleur Ouvrier de France en outillage et prototypage mécanique, l’initiative s’adresse aux industriels souhaitant associer leur image à l’excellence, à la précision et à la transmission du savoir-faire.
+                </p>
+                <p class="text-slate-900 font-semibold pt-4">
+                    Maîtres d’Excellence n’est pas une prestation marketing.<br>
+                    C’est un positionnement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LE MAÎTRE -->
+    <section id="maitre" class="section-padding bg-steel">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-4xl mb-8">Le Maître</h2>
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold">Jordan ARRIUBERGÉ</h3>
+                    <p class="text-blue-900 font-bold uppercase text-xs tracking-widest">Meilleur Ouvrier de France</p>
+                    <p class="text-slate-400 text-xs uppercase tracking-widest">Outillage & Prototypage Mécanique</p>
+                </div>
+                <div class="text-slate-600 space-y-4 text-base leading-relaxed">
+                    <p>Spécialiste des procédés industriels, de l’usinage de précision et de la gestion de production, il intervient depuis plusieurs années auprès d’industriels majeurs, d’écoles et d’institutions.</p>
+                    <p>Son rôle : incarner l’excellence industrielle française, transmettre, expliquer, valoriser.</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="aspect-[3/4] bg-slate-200 grayscale hover:grayscale-0 transition-all duration-700">
+                    <!-- Chemin local pour le portrait -->
+                    <img src="C:/Users/arriu/OneDrive/Documents/Maîtres d'Excellence/images/portrait-jordan.jpg" alt="Jordan Arriubergé MOF" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LES OFFRES -->
+    <section id="offres" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl mb-16 text-center">Dispositifs d'Excellence</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- 4.1 Location -->
+                <div class="premium-border p-12 flex flex-col">
+                    <h3 class="text-2xl mb-6">Location d’œuvre d’exception</h3>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        Mise à disposition d’une œuvre technique originale réalisée dans le cadre du concours Meilleur Ouvrier de France. Utilisable sur salons, showrooms, événements clients et conventions.
+                    </p>
+                    <div class="space-y-4 border-t border-slate-100 pt-8">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs uppercase font-semibold text-slate-400">Salon (3-5 jours)</span>
+                            <span class="font-bold">3 500 € HT</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs uppercase font-semibold text-slate-400">Semaine complète</span>
+                            <span class="font-bold">4 500 € HT</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs uppercase font-semibold text-slate-400">Mois / Showroom</span>
+                            <span class="font-bold">7 500 € HT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4.2 Présence -->
+                <div class="premium-border p-12 flex flex-col bg-slate-50">
+                    <h3 class="text-2xl mb-6">Œuvre & présence incarnée</h3>
+                    <p class="text-slate-600 mb-8 flex-grow">
+                        La présence de Jordan Arriubergé permet d’incarner l’excellence par l’échange direct avec les clients et décideurs. Représentation officielle et explications techniques de haut niveau.
+                    </p>
+                    <div class="space-y-4 border-t border-slate-200 pt-8">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs uppercase font-semibold text-slate-400">Accompagnement 1 jour</span>
+                            <span class="font-bold">6 500 € HT</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs uppercase font-semibold text-slate-400">Accompagnement 3 jours</span>
+                            <span class="font-bold">9 500 € HT</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs uppercase font-semibold text-slate-400">Salon complet</span>
+                            <span class="font-bold">12 000 € HT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PARTENARIATS ANNUELS -->
+    <section id="partenariats" class="section-padding bg-steel">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl mb-16 text-center">Partenariats Stratégiques</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- SILVER -->
+                <div class="bg-white p-12 shadow-sm border-t-4 border-slate-300">
+                    <h3 class="text-2xl mb-2">Partenariat Silver</h3>
+                    <p class="text-slate-400 text-xs font-bold uppercase mb-8">Visibilité & Récurrence</p>
+                    <ul class="text-slate-600 text-sm space-y-4 mb-10">
+                        <li>Jusqu’à 2 événements par an avec l’œuvre</li>
+                        <li>Droit d’association à Maîtres d’Excellence</li>
+                        <li>Droits de diffusion étendus (Print & Digital)</li>
+                        <li>Co-création de contenus éditoriaux</li>
+                    </ul>
+                    <div class="text-3xl font-bold">18 000 € <span class="text-sm font-normal text-slate-400">HT / an</span></div>
+                </div>
+
+                <!-- GOLD -->
+                <div class="bg-white p-12 shadow-sm border-t-4 border-blue-900">
+                    <h3 class="text-2xl mb-2">Partenariat Gold</h3>
+                    <p class="text-blue-900 text-xs font-bold uppercase mb-8">Exclusivité sectorielle</p>
+                    <ul class="text-slate-600 text-sm space-y-4 mb-10">
+                        <li>Jusqu’à 3 événements par an avec l’œuvre</li>
+                        <li>Présence du Maître sur 2 événements</li>
+                        <li><strong>Exclusivité sectorielle garantie</strong></li>
+                        <li>Droit d’usage stratégique & institutionnel</li>
+                    </ul>
+                    <div class="text-3xl font-bold">30 000 € <span class="text-sm font-normal text-slate-400">HT / an</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. DROITS DE DIFFUSION -->
+    <section class="section-padding bg-white border-y border-slate-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl mb-8">Droits de diffusion inclus</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">
+                Toutes les offres Maîtres d’Excellence intègrent des droits de diffusion étendus pour vos réseaux sociaux (LinkedIn, X, Instagram), sites internet, supports commerciaux et présentations institutionnelles.
+            </p>
+            <div class="inline-block border border-slate-200 px-6 py-3 text-[10px] font-bold uppercase tracking-widest">
+                Mention obligatoire : Œuvre de Jordan Arriubergé – Meilleur Ouvrier de France
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CIBLES -->
+    <section class="section-padding bg-steel">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-3xl mb-12">Industries Partenaires</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+                <div class="p-4 bg-white text-[10px] font-bold uppercase tracking-widest flex items-center justify-center h-24">Machines-Outils</div>
+                <div class="p-4 bg-white text-[10px] font-bold uppercase tracking-widest flex items-center justify-center h-24">Outils coupants</div>
+                <div class="p-4 bg-white text-[10px] font-bold uppercase tracking-widest flex items-center justify-center h-24">Lubrifiants</div>
+                <div class="p-4 bg-white text-[10px] font-bold uppercase tracking-widest flex items-center justify-center h-24">Métrologie</div>
+                <div class="p-4 bg-white text-[10px] font-bold uppercase tracking-widest flex items-center justify-center h-24">Logiciels CAO/FAO</div>
+                <div class="p-4 bg-white text-[10px] font-bold uppercase tracking-widest flex items-center justify-center h-24">Institutions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CONTACT -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl mb-8">Entrer en relation</h2>
+            <p class="text-lg text-slate-500 mb-12">
+                Vous souhaitez associer votre marque à l’excellence industrielle française ?<br>
+                Discutons ensemble de la formule la plus adaptée à votre stratégie.
+            </p>
+            <div class="space-y-4">
+                <p class="text-2xl font-bold">Jordan Arriubergé</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-slate-600">
+                    <a href="tel:0628533732" class="hover:text-blue-900 transition">📞 06 28 53 37 32</a>
+                    <a href="mailto:contact@maitresdexcellence.fr" class="hover:text-blue-900 transition">📧 contact@maitresdexcellence.fr</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-slate-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-8">
+            <div class="text-xl font-bold tracking-tighter">MAÎTRES D’EXCELLENCE</div>
+            <div class="text-[10px] uppercase tracking-[0.3em] opacity-40 text-center">
+                © Excellence industrielle française – Tous droits réservés
+            </div>
+            <div class="flex space-x-6 text-xs font-bold uppercase tracking-widest opacity-60">
+                <a href="#" class="hover:opacity-100">Mentions Légales</a>
+                <a href="https://linkedin.com" class="hover:opacity-100">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
