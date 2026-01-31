@@ -75,8 +75,26 @@
             padding: 3rem;
             height: 100%;
             transition: border-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
         }
         .card-pricing:hover { border-color: var(--anthracite); }
+
+        .macro-zoom {
+            overflow: hidden;
+            background: #000;
+        }
+        .macro-zoom img {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+            object-position: center 40%;
+            transform: scale(1.1);
+            transition: transform 10s linear;
+        }
+        .macro-zoom:hover img {
+            transform: scale(1.2);
+        }
 
         @media (max-width: 768px) {
             .section-padding { padding: 80px 20px; }
@@ -133,59 +151,102 @@
             </div>
         </section>
 
+        <!-- Visuel Zoomé (Macro) -->
+        <section class="macro-zoom">
+            <img src="2018-11-28-2368_1.jpg" alt="Détail macro de l'œuvre MOF">
+        </section>
+
         <!-- Manifeste -->
         <section id="concept" class="section-padding bg-white border-y border-black/[0.03]">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-32">
                 <div class="space-y-10">
-                    <h2 class="text-3xl font-bold uppercase tracking-tight">Une caution <br> stratégique.</h2>
+                    <h2 class="text-3xl font-bold uppercase tracking-tight text-[#1A1A1A]">Légitimité & Performance.</h2>
                     <p class="text-lg text-slate-400 font-light leading-relaxed italic">
                         "Dans un monde industriel où la technologie se standardise, la main de l'homme reste le juge ultime de la perfection."
                     </p>
                 </div>
                 <div class="space-y-8 text-sm text-slate-500 font-light leading-loose text-justify">
                     <p>Maîtres d'Excellence apporte aux marques leaders le sceau de légitimité du Meilleur Ouvrier de France. Nous ne vendons pas d'espace publicitaire : nous cautionnons votre avance technologique par la preuve du geste parfait.</p>
-                    <p>Cette association transforme votre avantage technique en une supériorité indiscutable aux yeux de vos clients les plus exigeants.</p>
+                    <p>Cette association transforme votre avantage technique en une supériorité indiscutable aux yeux de vos clients les plus exigeants, qu'il s'agisse de machines-outils, de lubrifiants ou de métrologie.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Offres Industrie -->
+        <!-- Offres Industrie (Programmes d'Influence) -->
         <section id="offres" class="section-padding bg-[#FAFAFA]">
             <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-xs font-bold uppercase tracking-[0.6em] text-slate-300 text-center mb-24 italic">Programmes d'Influence</h2>
+                <div class="text-center mb-24 space-y-4">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.8em] text-slate-300 italic">Programmes d'Influence</h2>
+                    <h3 class="text-4xl font-bold uppercase tracking-tight text-[#1A1A1A]">Dispositifs Stratégiques</h3>
+                </div>
+                
                 <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Location Signature -->
                     <div class="card-pricing border-t-4 border-t-[#002395]">
                         <div class="flex justify-between items-start mb-10">
-                            <h3 class="text-2xl font-bold uppercase tracking-tight">Location <br> Signature</h3>
+                            <h3 class="text-2xl font-bold uppercase tracking-tight text-[#1A1A1A]">Location <br> Signature</h3>
                             <span class="text-[9px] font-bold text-[#002395] tracking-[0.3em] border border-[#002395] px-4 py-1 uppercase">Prestige</span>
                         </div>
-                        <p class="text-slate-500 text-sm font-light mb-12">Installation du Chef-d'œuvre MOF au cœur de votre siège social ou showroom pour matérialiser votre exigence technique.</p>
+                        <p class="text-slate-500 text-sm font-light mb-12 flex-grow leading-relaxed">Installer le Chef-d'œuvre MOF au cœur de votre siège social ou stand de salon pour matérialiser instantanément votre positionnement haut de gamme.</p>
+                        <ul class="text-[11px] space-y-3 mb-10 list-none text-slate-400 uppercase tracking-widest font-semibold">
+                            <li>— Mise à disposition de l'œuvre originale</li>
+                            <li>— Vitrine sécurisée & Scénographie LED</li>
+                            <li>— Droits d'image événementiels</li>
+                        </ul>
                         <div class="pt-8 border-t border-black/5 flex justify-between items-center font-bold text-sm tracking-widest">
                             <span class="text-slate-300 text-[10px]">À PARTIR DE</span>
-                            <span>3 500 € HT</span>
+                            <span class="text-xl">3 500 € HT</span>
                         </div>
                     </div>
-                    <div class="card-pricing bg-[#1A1A1A] text-white border-none shadow-2xl">
-                        <div class="flex justify-between items-start mb-10">
+
+                    <!-- Ambassadeur Terrain -->
+                    <div class="card-pricing bg-[#1A1A1A] text-white border-none shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#ED2939]/20 to-transparent"></div>
+                        <div class="flex justify-between items-start mb-10 relative z-10">
                             <h3 class="text-2xl font-bold uppercase tracking-tight">Ambassadeur <br> Terrain</h3>
                             <span class="text-[9px] font-bold text-[#ED2939] tracking-[0.3em] border border-[#ED2939] px-4 py-1 uppercase">Action</span>
                         </div>
-                        <p class="text-slate-400 text-sm font-light mb-12">Présence physique de Jordan Arriubergé sur vos salons stratégiques. Accueil VIP et caution technique vivante.</p>
-                        <div class="pt-8 border-t border-white/10 flex justify-between items-center font-bold text-sm tracking-widest">
+                        <p class="text-slate-400 text-sm font-light mb-12 flex-grow leading-relaxed relative z-10">L’impact maximal : l’œuvre exposée couplée à la présence physique de Jordan Arriubergé. Une caution technique vivante pour vos rendez-vous VIP.</p>
+                        <ul class="text-[11px] space-y-3 mb-10 list-none text-slate-500 uppercase tracking-widest font-semibold relative z-10">
+                            <li>— Accueil personnalisé de vos prospects</li>
+                            <li>— Validation technique de vos points forts</li>
+                            <li>— Garantie de non-concurrence sur salon</li>
+                        </ul>
+                        <div class="pt-8 border-t border-white/10 flex justify-between items-center font-bold text-sm tracking-widest relative z-10">
                             <span class="text-slate-500 text-[10px]">À PARTIR DE</span>
-                            <span>12 000 € HT</span>
+                            <span class="text-xl">12 000 € HT</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Partenariat Annuel Gold - Mise en avant -->
+                <div class="mt-12 p-16 border-2 border-black bg-white flex flex-col md:flex-row justify-between items-center gap-16 shadow-2xl group hover:bg-[#FAFAFA] transition-all duration-700 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-black text-white text-[8px] px-8 py-3 uppercase tracking-[0.4em] rotate-45 translate-x-8 translate-y-3 font-bold">Élite</div>
+                    <div class="space-y-6 max-w-xl">
+                        <span class="text-[9px] font-bold text-[#002395] uppercase tracking-[0.6em]">L'Exclusivité de Marque</span>
+                        <h4 class="text-4xl font-bold uppercase tracking-tighter text-[#1A1A1A]">Partenariat Annuel Gold</h4>
+                        <p class="text-sm text-slate-500 font-light leading-relaxed">
+                            Devenir l'unique partenaire de votre secteur métier. Ce dispositif assure une présence sur vos 3 temps forts stratégiques, une licence d'image marketing mondiale et un accompagnement conseil en R&D.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <p class="text-[10px] font-bold uppercase text-slate-400">— Un seul leader par secteur</p>
+                            <p class="text-[10px] font-bold uppercase text-slate-400">— Rayonnement 365 jours/an</p>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-right shrink-0">
+                        <div class="text-4xl font-bold tracking-tighter text-[#1A1A1A]">30 000 € HT <span class="text-xs font-light text-slate-300">/ AN</span></div>
+                        <p class="text-[10px] font-bold uppercase text-[#002395] mt-4 tracking-widest">Sur sélection exclusive</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Bio Section -->
-        <section id="maitre" class="section-padding bg-white">
+        <section id="maitre" class="section-padding bg-white border-b border-black/5">
             <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
                 <div class="order-2 md:order-1 relative">
-                    <img src="images/portrait-jordan.jpg" alt="Jordan Arriubergé, MOF" class="w-full shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
-                    <div class="absolute -bottom-6 -right-6 bg-[#1A1A1A] p-10 text-white shadow-xl hidden md:block">
+                    <img src="images/portrait-jordan.jpg" alt="Jordan Arriubergé, MOF" class="w-full shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-[#1A1A1A] p-10 text-white shadow-xl hidden md:block border border-white/5">
                         <p class="text-3xl font-bold italic tracking-tighter">MOF 2018</p>
                         <p class="text-[8px] uppercase tracking-[0.4em] mt-2 opacity-50 text-center">Usinage Précision</p>
                     </div>
@@ -204,10 +265,10 @@
         </section>
 
         <!-- Subscription Form -->
-        <section id="souscription" class="section-padding bg-white border-t border-black/5">
+        <section id="souscription" class="section-padding bg-white">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-24">
-                    <h2 class="text-4xl font-bold uppercase tracking-tighter mb-4">Souscription.</h2>
+                    <h2 class="text-4xl font-bold uppercase tracking-tighter mb-4 text-[#1A1A1A]">Souscription.</h2>
                     <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.5em] italic">Initiez un projet d'excellence industrielle</p>
                 </div>
                 
@@ -215,11 +276,11 @@
                     <input type="text" name="name" required class="form-underlined" placeholder="NOM & PRÉNOM" />
                     <input type="text" name="company" required class="form-underlined" placeholder="STRUCTURE" />
                     <input type="email" name="_replyto" required class="form-underlined" placeholder="EMAIL PROFESSIONNEL" />
-                    <select name="formula" required class="form-underlined cursor-pointer">
+                    <select name="formula" required class="form-underlined cursor-pointer font-bold">
                         <option value="">SÉLECTIONNEZ UN DISPOSITIF</option>
                         <option value="location">LOCATION SIGNATURE</option>
                         <option value="presence">AMBASSADEUR TERRAIN</option>
-                        <option value="annuel">PARTENARIAT ANNUEL GOLD</option>
+                        <option value="gold">PARTENARIAT ANNUEL GOLD</option>
                         <option value="ecole">OFFRE PÉDAGOGIQUE</option>
                     </select>
                     <textarea name="message" rows="4" class="form-underlined md:col-span-2" placeholder="DÉCRIVEZ VOTRE ÉVÉNEMENT OU PROJET..."></textarea>
@@ -227,6 +288,22 @@
                         <button type="submit" class="btn-premium px-24 py-6 shadow-2xl">Soumettre la Demande</button>
                     </div>
                 </form>
+            </div>
+        </section>
+
+        <!-- Section Contact Direct (Final Page Principale) -->
+        <section id="contact-final" class="section-padding bg-[#FAFAFA] border-t border-black/5">
+            <div class="max-w-4xl mx-auto text-center px-12 space-y-16">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.8em] text-slate-300 italic">Expertise Directe</h2>
+                <div class="space-y-8">
+                    <p class="text-4xl font-bold text-black uppercase tracking-tighter italic">Jordan ARRIUBERGÉ</p>
+                    <p class="text-sm font-semibold text-[#002395] uppercase tracking-[0.5em] border-y border-black/5 py-4 inline-block px-12">Fondateur — Meilleur Ouvrier de France</p>
+                    
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-32 pt-12 text-sm font-bold tracking-[0.2em]">
+                        <a href="tel:0628533732" class="hover:text-[#002395] transition">06 28 53 37 32</a>
+                        <a href="mailto:contact@maitresdexcellence.fr" class="hover:text-[#002395] transition uppercase underline underline-offset-8">contact@maitresdexcellence.fr</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -241,7 +318,7 @@
             <p class="text-sm md:text-base text-slate-400 font-light mb-16 uppercase tracking-[0.5em] max-w-3xl leading-relaxed">
                 Redonner du sens, de l’exigence et de la fierté aux futurs talents de notre industrie.
             </p>
-            <div class="max-w-4xl mx-auto p-4 border border-black/5 bg-white">
+            <div class="max-w-4xl mx-auto p-4 border border-black/5 bg-white shadow-2xl">
                 <img src="images/portrait-jordan.jpg" alt="Jordan Arriubergé" class="w-full max-h-[500px] object-cover">
             </div>
         </section>
@@ -249,26 +326,25 @@
         <section class="section-padding bg-white">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-32">
                 <div class="space-y-10">
-                    <h2 class="text-3xl font-bold uppercase tracking-tight">Sens & Transmission.</h2>
+                    <h2 class="text-3xl font-bold uppercase tracking-tight text-[#1A1A1A]">Sens & Transmission.</h2>
                     <p class="text-lg text-slate-400 font-light leading-relaxed italic">
                         « Maîtres d’Excellence est une initiative dédiée à la reconnexion des apprenants aux valeurs fondamentales de l’industrie : la rigueur et la maîtrise du geste. »
                     </p>
                 </div>
                 <div class="space-y-8 text-sm text-slate-500 font-light leading-loose text-justify">
                     <p>À travers des œuvres techniques d’exception et des échanges directs avec un Meilleur Ouvrier de France, cette démarche vise à inspirer les élèves des grandes écoles et centres de formation.</p>
-                    <p>Elle offre une expérience pédagogique rare, capable de susciter des vocations d'excellence et de valoriser les filières de haute technicité.</p>
+                    <p>Elle offre une expérience pédagogique rare, capable de susciter des vocations d'excellence et de valoriser les filières de haute technicité auprès des jeunes générations.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Offres Écoles -->
         <section class="section-padding bg-[#FAFAFA] border-y border-black/5">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-xs font-bold uppercase tracking-[0.6em] text-slate-300 text-center mb-24 italic">Dispositifs Pédagogiques</h2>
                 <div class="grid md:grid-cols-3 gap-10">
                     <div class="card-pricing">
                         <h4 class="text-lg font-bold uppercase tracking-widest mb-6 text-[#002395]">Exposition <br> Pédagogique</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-10">Mise à disposition de l’œuvre MOF au sein de l’établissement (hall, salle d’exposition) avec présentation contextualisée.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-10 flex-grow">Mise à disposition de l’œuvre MOF au sein de l’établissement (hall, salle d’exposition) avec présentation contextualisée.</p>
                         <div class="pt-8 border-t border-black/5 font-bold text-sm tracking-widest">
                             <span class="text-slate-300 text-[9px] block">À PARTIR DE</span>
                             <span>1 500 € HT</span>
@@ -276,15 +352,15 @@
                     </div>
                     <div class="card-pricing">
                         <h4 class="text-lg font-bold uppercase tracking-widest mb-6 text-[#002395]">Conférence <br> & Échange</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-10">Conférence animée (parcours MOF, culture du détail, lien formation-industrie) suivie d'un temps d'échange direct.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-10 flex-grow">Conférence animée (parcours MOF, culture du détail, lien formation-industrie) suivie d'un temps d'échange direct.</p>
                         <div class="pt-8 border-t border-black/5 font-bold text-sm tracking-widest">
                             <span class="text-slate-300 text-[9px] block">À PARTIR DE</span>
                             <span>1 500 € HT</span>
                         </div>
                     </div>
-                    <div class="card-pricing bg-[#1A1A1A] text-white border-none">
-                        <h4 class="text-lg font-bold uppercase tracking-widest mb-6">Journée <br> Immersion</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed mb-10">Le dispositif complet : Exposition de l’œuvre, conférence magistrale et ateliers d’échanges approfondis.</p>
+                    <div class="card-pricing bg-[#1A1A1A] text-white border-none shadow-xl">
+                        <h4 class="text-lg font-bold uppercase tracking-widest mb-6 text-white">Journée <br> Immersion</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-10 flex-grow">Le dispositif complet : Exposition de l’œuvre, conférence magistrale et ateliers d’échanges approfondis avec les étudiants.</p>
                         <div class="pt-8 border-t border-white/10 font-bold text-sm tracking-widest">
                             <span class="text-slate-400 text-[9px] block">FORFAIT</span>
                             <span>2 500 € HT</span>
@@ -304,7 +380,7 @@
     <main id="page-oeuvre" class="page-view">
         <section class="pt-24 bg-black">
             <div class="w-full h-[85vh] flex items-center justify-center overflow-hidden">
-                <img src="images/oeuvre-mof.jpg" alt="Gyroscope MOF" class="max-w-full max-h-full object-contain">
+                <img src="2018-11-28-2368_1.jpg" alt="Gyroscope MOF" class="max-w-full max-h-full object-contain">
             </div>
         </section>
 
@@ -323,7 +399,7 @@
                             « Véritable démonstrateur de capabilité, cette œuvre a nécessité 1200 heures d'ingénierie et d'usinage manuel de haute technicité. »
                         </p>
                         <p class="text-sm text-slate-500 leading-relaxed text-justify">
-                            Réalisé pour le concours MOF, ce gyroscope est une synthèse de tournage et de fraisage de haute précision. Si le sujet principal était imposé par le jury national, le support de présentation a été laissé libre : il a été intégralement conçu et fabriqué par mes soins.
+                            Réalisé pour le concours MOF, ce gyroscope est une synthèse de tournage et de fraisage de haute précision. Si le sujet principal était imposé par le jury national, le support de présentation a été laissé libre : il a été intégralement conçu et fabriqué par mes soins pour magnifier la cinématique de l'œuvre.
                         </p>
                         <div class="pt-10">
                             <button onclick="showPage('home')" class="btn-premium">Demander une exposition</button>
@@ -339,13 +415,14 @@
                                 <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Promotion</span><span class="text-black">MOF 2018</span></li>
                             </ul>
                         </div>
+                        <p class="text-[10px] text-slate-400 font-light italic text-center uppercase tracking-widest leading-loose">Support de présentation entièrement conçu <br> et fabriqué par Jordan Arriubergé</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Commun -->
     <footer class="bg-[#1A1A1A] text-white py-32 px-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-24 items-start text-center md:text-left">
             <div>
