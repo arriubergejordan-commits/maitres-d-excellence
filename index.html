@@ -66,12 +66,12 @@
         }
         .form-underlined:focus { border-bottom-color: var(--anthracite); }
 
-        /* Cadre Image Zoom Macro pour l'accueil */
+        /* Effet Zoom Macro pour le Hero (Page Accueil) */
         .hero-macro-zoom {
             width: 100%;
             height: 65vh;
             overflow: hidden;
-            background: #f8fafc;
+            background: #000;
             border: 1px solid var(--border-fine);
         }
         .hero-macro-zoom img {
@@ -79,27 +79,11 @@
             height: 100%;
             object-fit: cover;
             object-position: center 45%; 
-            transform: scale(2); /* Zoom macro important pour supprimer le noir et voir la précision */
+            transform: scale(2); 
             transition: transform 15s ease-out;
         }
         .hero-macro-zoom:hover img {
             transform: scale(1.8);
-        }
-
-        /* Image intégrale pour la page Chef-d'œuvre */
-        .oeuvre-full-view {
-            width: 100%;
-            height: 85vh;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .oeuvre-full-view img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* L'oeuvre entière est visible sans zoom */
         }
 
         .card-pricing {
@@ -148,7 +132,7 @@
                 <button onclick="showPage('ecoles')" class="hover:text-black transition">Écoles & Formation</button>
                 <button onclick="showPage('oeuvre')" class="hover:text-black transition">Le Chef-d'œuvre</button>
                 <a href="#offres" onclick="showPage('home')" class="hover:text-black transition">Offres</a>
-                <a href="#souscription" onclick="showPage('home')" class="bg-[#1A1A1A] text-white px-8 py-3 tracking-[0.25em] hover:bg-black transition-all">Souscription</a>
+                <a href="#souscription" onclick="showPage('home')" class="bg-[#1A1A1A] text-white px-8 py-3 tracking-[0.25em] hover:bg-black transition-all shadow-lg">Souscription</a>
             </div>
         </div>
     </nav>
@@ -168,9 +152,8 @@
                 <button onclick="showPage('oeuvre')" class="text-[10px] font-bold uppercase tracking-[0.4em] border-b border-black pb-2 hover:opacity-50 transition-opacity">Voir l'œuvre</button>
             </div>
 
-            <!-- Zoom Macro sur l'œuvre remplaçant le bloc noir -->
             <div class="max-w-6xl mx-auto hero-macro-zoom shadow-sm">
-                <img src="images/oeuvre-mof.jpg" alt="Détail macro de l'œuvre MOF">
+                <img src="images/oeuvre-mof.jpg" alt="Zoom macro de l'œuvre MOF">
             </div>
         </section>
 
@@ -242,7 +225,7 @@
             </div>
         </section>
 
-        <!-- Fondateur -->
+        <!-- Le Maître -->
         <section id="maitre" class="section-padding bg-white border-b border-black/5">
             <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
                 <div class="order-2 md:order-1 relative">
@@ -287,6 +270,21 @@
                         <button type="submit" class="btn-premium px-24 py-6 shadow-2xl">Soumettre la Demande</button>
                     </div>
                 </form>
+            </div>
+        </section>
+
+        <!-- SECTION CONTACT -->
+        <section id="contact-final" class="section-padding bg-[#FAFAFA] border-t border-black/5">
+            <div class="max-w-4xl mx-auto text-center px-12 space-y-16">
+                <h2 class="text-[10px] font-bold uppercase tracking-[0.8em] text-slate-300 italic">Expertise Directe</h2>
+                <div class="space-y-8">
+                    <p class="text-4xl font-bold text-black uppercase tracking-tighter italic">Jordan ARRIUBERGÉ</p>
+                    <p class="text-sm font-semibold text-[#002395] uppercase tracking-[0.5em] border-y border-black/5 py-4 inline-block px-12">Directeur & Meilleur Ouvrier de France</p>
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-32 pt-12 text-sm font-bold tracking-[0.2em]">
+                        <a href="tel:0628533732" class="hover:text-[#002395] transition">06 28 53 37 32</a>
+                        <a href="mailto:contact@maitresdexcellence.fr" class="hover:text-[#002395] transition uppercase underline underline-offset-8">contact@maitresdexcellence.fr</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -339,7 +337,7 @@
                     </div>
                     <div class="card-pricing bg-[#1A1A1A] text-white border-none shadow-xl">
                         <h4 class="text-lg font-bold uppercase tracking-widest mb-6 text-white">Journée <br> Immersion</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed mb-10 flex-grow">Le dispositif complet : Exposition de l’œuvre, conférence et ateliers avec les étudiants.</p>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-10 flex-grow">Le dispositif complet : Exposition de l’œuvre, conférence et ateliers avec les formateurs.</p>
                         <div class="pt-8 border-t border-white/10 font-bold text-sm tracking-widest">
                             <span class="text-slate-400 text-[9px] block">FORFAIT</span>
                             <span>2 500 € HT</span>
@@ -350,47 +348,59 @@
         </section>
     </main>
 
-    <!-- VUE : PAGE CHEF-D'ŒUVRE -->
-    <main id="page-oeuvre" class="page-view">
-        <!-- Photo de l'œuvre en intégralité (sans zoom, cadrage complet "Contain") -->
-        <section class="pt-24 bg-black">
-            <div class="oeuvre-full-view">
-                <img src="images/oeuvre-mof.jpg" alt="Gyroscope MOF - Vue Intégrale">
+    <!-- VUE : PAGE CHEF-D'ŒUVRE (Split Screen Restructuré) -->
+    <main id="page-oeuvre" class="page-view min-h-screen">
+        <div class="flex flex-col md:flex-row h-full">
+            <!-- Côté Gauche : Photo Intégrale sans bordure -->
+            <div class="w-full md:w-1/2 h-[60vh] md:h-screen bg-black flex items-center justify-center pt-24 md:pt-0">
+                <img src="images/oeuvre-mof.jpg" alt="[Gyroscope MOF - Vue Intégrale]" class="max-w-full max-h-full object-contain">
             </div>
-        </section>
-
-        <section class="section-padding bg-white">
-            <div class="max-w-5xl mx-auto px-6">
-                <div class="mb-24">
+            
+            <!-- Côté Droit : Texte et Détails -->
+            <div class="w-full md:w-1/2 bg-white flex items-center pt-24 md:pt-0">
+                <div class="max-w-lg mx-auto px-8 md:px-16 py-20">
                     <span class="text-[10px] font-bold uppercase tracking-[0.6em] text-slate-300 block mb-6 italic">Support de transmission pédagogique</span>
-                    <h1 class="text-5xl md:text-6xl font-bold uppercase tracking-tighter text-[#1A1A1A]">Le Gyroscope à Suspension Cardan.</h1>
-                    <div class="h-1 w-20 bg-[#ED2939] mt-8"></div>
+                    <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-[#1A1A1A] mb-8 leading-none">Le Gyroscope à Suspension Cardan.</h1>
+                    <div class="h-1 w-20 bg-[#ED2939] mb-12"></div>
+
+                    <div class="space-y-8">
+                        <p class="text-slate-500 font-light leading-loose text-justify text-lg italic">
+                            « Manifeste de la précision micronique, cette œuvre est le résultat de deux années de recherche et d'usinage manuel de haute technicité. »
+                        </p>
+                        <p class="text-[10px] text-slate-400 font-light italic text-center md:text-left uppercase tracking-widest">Polissage mécanique par coupe directe à l'outil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Spécifications Toute Largeur -->
+        <section class="section-padding bg-[#FAFAFA] border-y border-black/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-24 items-start">
+                    <div class="space-y-8 text-sm text-slate-500 font-light leading-loose text-justify">
+                        <p>
+                            Réalisé pour le concours MOF, ce gyroscope est un démonstrateur de capabilité absolue. Il permet d'aborder concrètement la culture du zéro défaut, les ajustages complexes et l'enchaînement des procédés d'usinage sur métaux alliés aéronautiques.
+                        </p>
+                        <p>
+                            L'œuvre n'est pas seulement un objet statique ; elle possède une cinématique complexe sur trois axes de liberté, validant une symétrie et un équilibrage dynamique parfaits.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-12 border border-black/[0.03] space-y-8 shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.4em] text-[#002395]">Spécifications du Maître</h3>
+                        <ul class="text-[11px] uppercase tracking-widest space-y-6 font-semibold text-slate-500">
+                            <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Précision Dimensionnelle</span><span class="text-black">0,010 mm</span></li>
+                            <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Temps d'Usinage</span><span class="text-black">1200 Heures</span></li>
+                            <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Cinématique</span><span class="text-black">3 Axes (Cardan)</span></li>
+                            <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Promotion</span><span class="text-black">MOF 2018</span></li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-24 items-start">
-                    <div class="space-y-12">
-                        <h3 class="text-2xl font-bold uppercase tracking-tight text-[#002395]">Manifeste technique</h3>
-                        <p class="text-slate-500 font-light leading-loose text-justify text-lg italic">
-                            « Véritable démonstrateur de capabilité, cette œuvre a nécessité 1200 heures d'ingénierie et d'usinage manuel de haute technicité. »
-                        </p>
-                        <p class="text-sm text-slate-500 leading-relaxed text-justify">
-                            Réalisé pour le concours MOF, ce gyroscope est une synthèse de tournage et de fraisage de haute précision. Si le sujet principal était imposé par le jury national, le support de présentation a été laissé libre : il a été intégralement conçu et fabriqué par mes soins pour magnifier la cinématique de l'œuvre.
-                        </p>
-                        <div class="pt-10">
-                            <button onclick="showPage('home')" class="btn-premium">Demander une exposition</button>
-                        </div>
-                    </div>
-                    <div class="space-y-10">
-                        <div class="bg-[#FAFAFA] p-12 border border-black/[0.03] space-y-8 shadow-sm">
-                            <h3 class="text-xs font-bold uppercase tracking-[0.4em] text-[#002395]">Spécifications du Maître</h3>
-                            <ul class="text-[11px] uppercase tracking-widest space-y-6 font-semibold text-slate-500">
-                                <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Précision Dimensionnelle</span><span class="text-black">0,010 mm</span></li>
-                                <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Temps d'Usinage</span><span class="text-black">1200 Heures</span></li>
-                                <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Cinématique</span><span class="text-black">3 Axes (Cardan)</span></li>
-                                <li class="flex justify-between border-b border-black/[0.05] pb-2"><span>Promotion</span><span class="text-black">MOF 2018</span></li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- Bouton de Demande intégré sous les spécifications -->
+                <div class="mt-24 text-center">
+                    <h2 class="text-2xl font-bold uppercase tracking-widest mb-10">Associer ce symbole à votre projet.</h2>
+                    <button onclick="showPage('home')" class="btn-premium px-16 py-6">Demander une proposition d'exposition</button>
                 </div>
             </div>
         </section>
@@ -411,7 +421,7 @@
             </div>
             <div class="flex flex-col md:items-end space-y-4 text-[10px] font-bold uppercase tracking-[0.3em] opacity-50">
                 <a href="https://www.linkedin.com/in/jordan-arriuberge-mof/" target="_blank" class="hover:opacity-100 transition">LinkedIn</a>
-                <a href="mailto:contact@maitresdexcellence.fr" class="hover:opacity-100 transition uppercase underline underline-offset-8">contact@maitresdexcellence.fr</a>
+                <a href="mailto:contact@maitresdexcellence.fr" class="hover:opacity-100 transition uppercase">contact@maitresdexcellence.fr</a>
                 <a href="tel:0628533732" class="hover:opacity-100 transition">06 28 53 37 32</a>
             </div>
         </div>
@@ -419,10 +429,8 @@
 
     <script>
         function showPage(pageId) {
-            // Basculer entre les vues
             document.querySelectorAll('.page-view').forEach(view => view.classList.remove('active'));
             document.getElementById('page-' + pageId).classList.add('active');
-            // Remonter en haut de page
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
